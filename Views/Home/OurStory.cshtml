@@ -1,0 +1,424 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Our Story ❤️</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: black;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        section {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1.2s ease, transform 1.2s ease;
+        }
+
+           /*  section:nth-child(odd) {
+                background: linear-gradient(180deg, #000000, #111111);
+            }
+
+            section:nth-child(even) {
+                background: linear-gradient(180deg, #111111, #1a1a1a);
+            } */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: #000; /* single solid background */
+            color: white;
+            overflow-x: hidden;
+        }
+
+        section {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1.2s ease, transform 1.2s ease;
+            background: transparent; /* important */
+        }
+            section.active {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        h1 {
+            font-size: 40px;
+            color: #ff4d6d;
+            margin-bottom: 20px;
+            text-shadow: 0 0 15px rgba(255, 77, 109, 0.6);
+        }
+
+        p {
+            max-width: 700px;
+            line-height: 1.8;
+            font-size: 18px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 30px;
+            background: #ff4d6d;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 30px;
+        }
+
+        .gallery img {
+            width: 200px;
+            border-radius: 15px;
+            margin: 10px;
+            transition: .4s;
+        }
+
+            .gallery img:hover {
+                transform: scale(1.1);
+            }
+
+        /* Floating hearts */
+        .heart {
+            position: fixed;
+            bottom: -20px;
+            font-size: 20px;
+            animation: floatUp 6s linear infinite;
+            opacity: .7;
+        }
+
+        @@keyframes floatUp {
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(-120vh);
+            }
+        }
+
+        #counter {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #ff4d6d;
+        }
+
+        .music-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 8px 15px;
+            border-radius: 20px;
+            background: #ff4d6d;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 🎵 Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="/music/love.mp3" type="audio/mpeg">
+    </audio>
+
+    <button class="music-btn" onclick="document.getElementById('bgMusic').play()">🎵 Play Music</button>
+
+    <section>
+        <div>
+            <h1>Hi Nandinii ❤️</h1>
+            <p>
+                This isn’t just a page.
+                It’s our story.
+                And I remember every single detail.
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <div>
+            <h1>The Beginning 🔥</h1>
+            <p>
+                It didn’t start with a “hi”.
+
+                It started with a fire emoji on my Instagram story.
+
+                That little 🔥 reaction.
+                You probably don’t even realize it…
+
+                But that’s where everything changed.
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <div>
+            <h1>The Canteen Days ☕</h1>
+            <p>
+                We were just two college starters.
+
+                Seeing each other in the canteen.
+                Pretending not to notice.
+                But secretly noticing everything.
+
+                Every time I saw you,
+                I acted normal…
+
+                But inside?
+                Complete chaos.
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <div>
+            <h1>The First Meeting 🌳</h1>
+            <p>
+                We decided to meet.
+
+                You came alone.
+                I came alone.
+
+                We walked just one round in the park.
+                Barely talking.
+                Both shy.
+                Both nervous.
+
+                The silence wasn’t awkward.
+                It was loud with butterflies.
+
+                We met for maybe 20 minutes.
+                Then I said,
+                “I have a lecture.”
+
+                Truth?
+                I didn’t run because of the lecture.
+                I ran because I was already falling for you.
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <div>
+            <h1>The First Coffee ☕</h1>
+            <p>
+                After one of our exams,
+
+                Your friends knew.
+                My friends knew.
+                And somehow they pushed us outside the college gate
+                to that small coffee shop.
+
+                We sat there,
+                pretending to be normal.
+
+                The coffee?
+                Honestly… it was terrible.
+
+                But we didn’t complain.
+                We didn’t react.
+                We just smiled.
+
+                Because it wasn’t about the coffee.
+
+                It was about sitting in front of you,
+                knowing this was something special.
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <div>
+            <h1>The Letters ✉️</h1>
+            <p>
+                I used to think about what to say before meeting you.
+
+                But every time I saw you,
+                my mind went blank.
+
+                So I wrote letters.
+
+                Because on paper,
+                I was brave.
+
+                In front of you,
+                I was just a shy boy
+                trying not to show how much he cared.
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <div>
+            <h1>The College Stairs 💋</h1>
+            <p>
+                And then…
+
+                That moment.
+
+                On the college stairs.
+
+                Our first kiss.
+
+                I still remember exactly how I felt.
+                My heart racing.
+                My hands slightly shaking.
+                The world going silent.
+
+                That feeling?
+                That moment?
+
+                It can never be recreated.
+                It was pure.
+                It was ours.
+
+                And even today,
+                when I think about it,
+                I smile like an idiot.
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <div>
+            <h1>The Soda Outside College 🥤</h1>
+            <p>
+                There was that soda guy outside college.
+
+                We used to go there.
+                Just small things.
+                Simple moments.
+
+                But I loved them.
+
+                Because even doing nothing with you
+                felt better than doing something with anyone else.
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <div>
+            <h1>Behind the College 🚶‍♂️</h1>
+            <p>
+                Behind the college,
+                there was that big water tank.
+
+                We used to go there sometimes.
+
+                And that railway track…
+
+                Remember how we acted like we were trekking?
+                Like explorers on some adventure?
+
+                It was silly.
+                It was random.
+
+                But it was ours.
+
+                Those small, stupid, happy moments
+                mean more to me than anything expensive ever could.
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <div>
+            <h1>From Then… To Now ❤️</h1>
+            <p>
+                From shy starters in the canteen…
+                to awkward park walks…
+                to bad coffee dates…
+                to first kisses on college stairs…
+                to fake trekking behind campus…
+
+                Four years later,
+                we’re still here.
+
+                Stronger.
+                Closer.
+                More comfortable than ever.
+
+                You know my fears.
+                My dreams.
+                My secrets.
+
+                And I know yours.
+
+                And that’s what makes this love real.
+
+                Not just butterflies.
+                Not just excitement.
+
+                But understanding.
+                Trust.
+                Choosing each other every day.
+            </p>
+
+            <div id="counter"></div>
+
+            <button class="btn" onclick="next()">Continue Our Journey 💘</button>
+        </div>
+    </section>
+
+    <script>
+        const sections = document.querySelectorAll("section");
+
+        window.addEventListener("scroll", () => {
+            sections.forEach(sec => {
+                const rect = sec.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100) {
+                    sec.classList.add("active");
+                }
+            });
+        });
+
+        function next() {
+            window.location = "/Home/Level1";
+        }
+
+        /* floating hearts */
+        setInterval(() => {
+            const heart = document.createElement("div");
+            heart.className = "heart";
+            heart.innerHTML = "❤️";
+            heart.style.left = Math.random() * 100 + "vw";
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 6000);
+        }, 500);
+
+        /* 4 year counter */
+        const startDate = new Date("2022-04-29"); // CHANGE THIS TO REAL DATE
+        function updateCounter() {
+            const now = new Date();
+            const diff = now - startDate;
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            document.getElementById("counter").innerText =
+                "Together for " + days + " days and still counting ❤️";
+        }
+        setInterval(updateCounter, 1000);
+        updateCounter();
+    </script>
+
+</body>
+</html>

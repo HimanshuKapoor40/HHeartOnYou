@@ -1,0 +1,63 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 100px;
+            font-family: Segoe UI;
+        }
+
+        .envelope {
+            width: 200px;
+            height: 150px;
+            background: #ff4d6d;
+            margin: auto;
+            cursor: pointer;
+        }
+
+        .letter {
+            display: none;
+            margin-top: 30px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>A Letter From Honey ✉️</h1>
+
+    <div class="envelope" onclick="openLetter()"></div>
+
+    <div class="letter" id="letterText">
+        Battli…
+
+        From shy college walks
+        to four years of comfort…
+
+        You became my safe place.
+        My peace.
+        My forever.
+
+        — Honey ❤️
+
+        <br /><br />
+        <button onclick="next()">Next 😌</button>
+    </div>
+
+    <script>
+        function openLetter(){
+            document.getElementById("letterText").style.display="block";
+        }
+        function next(){
+            window.location="/Home/Chat";
+        }
+    </script>
+
+</body>
+</html>

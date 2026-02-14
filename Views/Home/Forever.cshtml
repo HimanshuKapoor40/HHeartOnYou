@@ -1,0 +1,179 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Forever Yours ❤️</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: 'Segoe UI', sans-serif;
+            background: radial-gradient(circle at top, #1a002a, #000);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* Floating hearts */
+        .heart {
+            position: absolute;
+            bottom: -40px;
+            font-size: 22px;
+            animation: floatUp 14s linear infinite;
+            opacity: 0.6;
+        }
+
+        @@keyframes floatUp {
+            from
+
+        {
+            transform: translateY(0) scale(1);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateY(-120vh) scale(1.7);
+            opacity: 1;
+        }
+
+        }
+
+        .wrapper {
+            max-width: 850px;
+            padding: 80px 40px;
+            animation: fadeIn 2s ease;
+        }
+
+        @@keyframes fadeIn {
+            from
+
+        {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        }
+
+        h1 {
+            font-size: 50px;
+            margin-bottom: 25px;
+        }
+
+            h1 span {
+                color: #ff6b81;
+            }
+
+        p {
+            font-size: 20px;
+            line-height: 1.9;
+            opacity: 0.95;
+            margin-bottom: 50px;
+            white-space: pre-line;
+        }
+
+        .video-box {
+            margin: 50px auto;
+            max-width: 500px;
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 25px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+        }
+
+        video {
+            width: 100%;
+            border-radius: 20px;
+        }
+
+        .caption {
+            font-size: 14px;
+            opacity: 0.85;
+            margin-top: 10px;
+        }
+
+        h2 {
+            font-size: 30px;
+            margin-top: 60px;
+            color: #ff8fa3;
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Floating hearts -->
+    <span class="heart" style="left:10%;">❤️</span>
+    <span class="heart" style="left:25%;">💖</span>
+    <span class="heart" style="left:40%;">✨</span>
+    <span class="heart" style="left:55%;">💘</span>
+    <span class="heart" style="left:70%;">❤️</span>
+    <span class="heart" style="left:85%;">✨</span>
+
+    <!-- Background music -->
+    <audio autoplay loop>
+        <!-- Replace with your romantic song -->
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="wrapper">
+
+        <h1>Nandinii <span>❤️</span></h1>
+
+        <p>
+            From shy college kids
+            to four beautiful years…
+
+            I still get butterflies.
+            I still wait for your texts.
+            I still smile at your name.
+
+            In every version of my future,
+            in every quiet moment,
+            in every loud laugh…
+
+            I choose you.
+
+            Always.
+        </p>
+
+        <!-- Cute / funny cartoon-style video -->
+        <div class="video-box">
+            <video autoplay loop muted playsinline>
+                <source src="https://cdn.coverr.co/videos/coverr-cartoon-love-illustration-6537/1080p.mp4" type="video/mp4">
+            </video>
+            <div class="caption">
+                A little laugh… because love should always smile 😄
+            </div>
+        </div>
+
+        <h2>Forever Yours — Honey 💍</h2>
+
+        <footer>
+            Heart On you  ❤️
+        </footer>
+
+    </div>
+
+</body>
+</html>

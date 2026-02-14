@@ -1,0 +1,51 @@
+﻿
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background: linear-gradient(135deg,#ff758c,#ff7eb3);
+            text-align: center;
+            padding: 60px;
+            font-family: Segoe UI;
+            color: white;
+        }
+
+        .heart {
+            font-size: 50px;
+            cursor: pointer;
+            margin: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Find Honey’s Heart 💖</h1>
+    <p>Only one heart unlocks the final gift 😏</p>
+
+    <div id="hearts"></div>
+    <p id="msg"></p>
+
+    <script>
+        const correct=Math.floor(Math.random()*6);
+        const container=document.getElementById("hearts");
+
+        for(let i=0;i<6;i++){
+            const h=document.createElement("span");
+            h.innerHTML="❤️";
+            h.className="heart";
+            h.onclick=()=>{
+                if(i===correct){
+                    document.getElementById("msg").innerText="You found it Battli 😍";
+                    setTimeout(()=>window.location="/Home/Secret",1000);
+                }else{
+                    document.getElementById("msg").innerText="Not this one Nandinii 😏";
+                }
+            }
+            container.appendChild(h);
+        }
+    </script>
+
+</body>
+</html>

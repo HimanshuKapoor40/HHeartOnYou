@@ -1,0 +1,47 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            text-align: center;
+            background: #ff9a9e;
+            color: white;
+            padding: 100px;
+            font-family: Segoe UI;
+        }
+
+        #counter {
+            font-size: 28px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Time With You ❤️</h1>
+    <div id="counter"></div>
+
+    <button onclick="next()">Next 💘</button>
+
+    <script>
+        const startDate=new Date("2020-01-01"); // change to real date
+        function update(){
+            const now=new Date();
+            const diff=now-startDate;
+            const days=Math.floor(diff/(1000*60*60*24));
+            document.getElementById("counter").innerText=
+                "Together for "+days+" days and counting...";
+        }
+        setInterval(update,1000);
+        update();
+
+        function next(){
+            window.location="/Home/Level1";
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,246 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Honey ❤️ Nandinii</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            font-family: 'Segoe UI', sans-serif;
+            background: radial-gradient(circle at top, #1b2735, #090a0f);
+            color: white;
+            overflow: hidden;
+        }
+
+            /* Animated Stars */
+            body::before {
+                content: "";
+                position: absolute;
+                width: 200%;
+                height: 200%;
+                background: url("https://www.transparenttextures.com/patterns/stardust.png");
+                animation: stars 60s linear infinite;
+                opacity: 0.4;
+            }
+
+        @@keyframes stars {
+            from
+
+        {
+            transform: translate(0,0);
+        }
+
+        to {
+            transform: translate(-500px, -500px);
+        }
+
+        }
+
+        /* Floating Hearts */
+        .heart {
+            position: absolute;
+            bottom: -50px;
+            color: #ff6b81;
+            font-size: 20px;
+            animation: floatUp 10s linear infinite;
+            opacity: 0.6;
+        }
+
+        @@keyframes floatUp {
+            from
+
+        {
+            transform: translateY(0) scale(1);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateY(-120vh) scale(1.5);
+            opacity: 1;
+        }
+
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr 1fr;
+            padding: 40px;
+            gap: 25px;
+        }
+
+        .panel {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            padding: 30px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            animation: fadeIn 1.2s ease;
+        }
+
+        h1, h2 {
+            margin: 0 0 15px;
+        }
+
+            h1 span {
+                color: #ff6b81;
+            }
+
+        p {
+            font-size: 15px;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        /* Center Game Panel */
+        .center {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .choices button {
+            width: 100%;
+            padding: 14px;
+            margin-top: 12px;
+            border-radius: 30px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: 600;
+        }
+
+        .choice-no {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.3);
+            color: #ccc;
+        }
+
+            .choice-no:hover {
+                transform: translateX(10px);
+            }
+
+        .choice-yes {
+            background: linear-gradient(135deg, #ff4d6d, #ff758f);
+            color: white;
+            box-shadow: 0 10px 30px rgba(255,77,109,0.6);
+        }
+
+            .choice-yes:hover {
+                transform: scale(1.1);
+            }
+
+        /* Memory Wall */
+        .memory {
+            background: rgba(255,255,255,0.12);
+            padding: 12px;
+            border-radius: 15px;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 15px;
+            width: 100%;
+            text-align: center;
+            font-size: 13px;
+            opacity: 0.6;
+        }
+
+        @@keyframes fadeIn {
+            from
+
+        {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Floating Hearts -->
+    <span class="heart" style="left:10%;animation-duration:12s;">❤️</span>
+    <span class="heart" style="left:30%;animation-duration:9s;">💖</span>
+    <span class="heart" style="left:50%;animation-duration:14s;">❤️</span>
+    <span class="heart" style="left:70%;animation-duration:10s;">💘</span>
+    <span class="heart" style="left:90%;animation-duration:13s;">❤️</span>
+
+    <div class="container">
+
+        <!-- Left: Memory Album -->
+        <div class="panel">
+            <h2>📸 Our Moments</h2>
+            <div class="memory">✨ First late-night talks</div>
+            <div class="memory">😂 Endless teasing & laughs</div>
+            <div class="memory">🌙 Silent understanding</div>
+            <div class="memory">💬 Random deep conversations</div>
+            <div class="memory">❤️ Feelings we never said</div>
+        </div>
+
+        <!-- Center: Game Choice -->
+        <div class="panel center">
+            <h1>Nandinii <span>❤️</span></h1>
+            <p>
+                This is not a question.<br>
+                This is **a level** in our story.<br><br>
+                Choose wisely.
+            </p>
+
+            <div class="choices">
+                <button class="choice-no" onclick="wrong()">Just Friends 😐</button>
+                <button class="choice-no" onclick="wrong()">Confused 🙄</button>
+                <button class="choice-yes" onclick="right()">Forever With Honey 💍</button>
+            </div>
+        </div>
+
+        <!-- Right: Love Stats -->
+        <div class="panel">
+            <h2>🎮 Love Stats</h2>
+            <p>Trust Level: ██████████ 100%</p>
+            <p>Care Level: ██████████ 100%</p>
+            <p>Patience: █████████░ 95%</p>
+            <p>Jealousy: ███░░░░░░░ 30%</p>
+            <p>Forever Mode: 🔒 Locked (You decide)</p>
+        </div>
+
+    </div>
+
+    <footer>
+        Directed, designed & felt by Honey ❤️
+    </footer>
+
+    <script>
+        function wrong() {
+            alert("Wrong path 😏\nGame over? Nah.\nTry again.");
+        }
+
+        function right() {
+            alert("LEVEL COMPLETE ❤️\nForever unlocked.");
+            window.location = "/Home/Game";
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background: black;
+            color: white;
+            font-family: Segoe UI;
+            padding: 50px;
+        }
+
+        .chat {
+            max-width: 400px;
+            margin: auto;
+        }
+
+        .msg {
+            background: #ff4d6d;
+            padding: 10px;
+            border-radius: 15px;
+            margin: 10px;
+        }
+
+        .right {
+            background: #444;
+            text-align: right;
+        }
+
+        .btn {
+            display: block;
+            margin: 30px auto;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Where It Started 💬</h1>
+
+    <div class="chat">
+        <div class="msg">Nandinii: Hi</div>
+        <div class="msg right">Honey: Hi 😅</div>
+        <div class="msg">You’re in canteen?</div>
+        <div class="msg right">Maybe 😏</div>
+    </div>
+
+    <button class="btn" onclick="next()">Continue ❤️</button>
+
+    <script>
+        function next(){
+            window.location="/Home/Counter";
+        }
+    </script>
+
+</body>
+</html>

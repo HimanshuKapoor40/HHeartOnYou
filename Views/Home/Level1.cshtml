@@ -1,0 +1,494 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Honey ❤️ Nandinii</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(120deg, #ff758f, #845ec2, #4d96ff);
+            background-size: 300% 300%;
+            animation: bgMove 12s ease infinite;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        @@keyframes bgMove {
+            0%
+
+        {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 60px 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .photo {
+            background: rgba(255,255,255,0.15);
+            padding: 10px;
+            border-radius: 15px;
+            transform: rotate(-2deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 380px;
+        }
+
+            .photo:nth-child(even) {
+                transform: rotate(2deg);
+            }
+
+            .photo img {
+                width: 100%;
+                border-radius: 12px;
+                object-fit: contain;
+            }
+
+        /* Romantic caption */
+        .caption {
+            margin-top: 10px;
+            font-size: 14px;
+            color: white;
+            font-style: italic;
+            line-height: 1.4;
+            padding: 6px 8px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+        }
+
+        h1 {
+            font-size: 46px;
+            margin-bottom: 10px;
+        }
+
+
+        .story-video {
+            position: relative;
+            width: 100%;
+            max-width: 900px; /* container bada */
+            height: 600px; /* bigger frame */
+            margin: auto;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            background: rgba(0,0,0,0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* IMAGE SMALL + CENTER */
+        .story-slide {
+            position: absolute;
+            width: 70%; /* 👈 image chhoti dikhegi */
+            height: 70%;
+            object-fit: contain;
+            opacity: 0;
+            transition: opacity 1.5s ease;
+        }
+
+            .story-slide.active {
+                opacity: 1;
+            }
+        .story-text {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 22px;
+            text-shadow: 0 0 20px rgba(0,0,0,0.6);
+            text-align: center;
+        }
+        h2 {
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 18px;
+            max-width: 700px;
+        }
+
+        /* GAME */
+        .game {
+            width: 300px;
+            height: 300px;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            position: relative;
+            margin-top: 30px;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 32px;
+            cursor: pointer;
+        }
+
+        /* HEART UNLOCK */
+        .big-heart {
+            font-size: 90px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+            .big-heart:hover {
+                transform: scale(1.2);
+            }
+
+        .bar {
+            width: 300px;
+            height: 14px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 20px;
+            overflow: hidden;
+            margin-top: 15px;
+        }
+
+        .fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #ff4d6d, #ff85a1);
+        }
+
+        /* GALLERY */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 900px;
+            margin-top: 40px;
+        }
+
+        .photo {
+            background: rgba(255,255,255,0.15);
+            padding: 10px;
+            border-radius: 15px;
+            transform: rotate(-2deg);
+        }
+
+            .photo:nth-child(even) {
+                transform: rotate(2deg);
+            }
+
+            .photo img {
+                width: 100%;
+                border-radius: 12px;
+            }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 750px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+
+            .video-wrapper video {
+                width: 100%;
+                height: auto;
+            }
+
+
+        @@keyframes slowZoom {
+            from
+
+        {
+            transform: scale(1);
+        }
+
+        to {
+            transform: scale(1.08);
+        }
+
+        }
+
+        /* Overlay Text */
+        .video-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .fadeText {
+            opacity: 0;
+            font-size: 26px;
+            margin: 10px 0;
+            animation: fadeInText 6s infinite;
+        }
+
+        .delay1 {
+            animation-delay: 2s;
+        }
+
+        .delay2 {
+            animation-delay: 4s;
+        }
+
+        @@keyframes fadeInText {
+            0%
+
+        {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        20% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        80% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+        }
+
+        }
+  
+
+.video-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.video-overlay h3 {
+    font-size: 26px;
+    margin: 10px 0;
+}
+
+        /* Glow Button */
+        .glow-btn {
+            margin-top: 30px;
+            padding: 15px 40px;
+            border-radius: 40px;
+            border: none;
+            font-size: 18px;
+            background: linear-gradient(90deg,#ff4d6d,#ff85a1);
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 0 20px rgba(255,105,135,0.6);
+            transition: 0.3s;
+        }
+
+            .glow-btn:hover {
+                transform: scale(1.1);
+                box-shadow: 0 0 40px rgba(255,105,135,1);
+            }
+
+        /* VIDEO */
+        video {
+            width: 100%;
+            max-width: 700px;
+            border-radius: 20px;
+            margin-top: 20px;
+        }
+
+        button {
+            margin-top: 25px;
+            padding: 14px 35px;
+            border-radius: 30px;
+            border: none;
+            font-size: 18px;
+            background: white;
+            color: #ff4d6d;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+            button:hover {
+                transform: scale(1.1);
+            }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- PART 1 : GAME -->
+    <section id="gameSection">
+        <h1>Nandinii ❤️</h1>
+        <p>
+            I didn’t want to ask directly 😏
+            So first… **catch my heart**.
+        </p>
+
+        <div class="game" id="game">
+            <div class="heart" id="heart">❤️</div>
+        </div>
+
+        <p id="triesText">Attempts: 0</p>
+    </section>
+
+    <!-- PART 2 : HONEY'S HEART -->
+    <section id="heartSection" class="hidden">
+        <h2>You caught it 💖</h2>
+        <p>
+            But owning my heart…
+            needs a little more love 😌
+        </p>
+
+        <div class="big-heart" onclick="fillHeart()">❤️</div>
+
+        <div class="bar">
+            <div class="fill" id="fill"></div>
+        </div>
+
+        <p id="fillText">Tap to fill</p>
+    </section>
+
+    <!-- PART 3 : PHOTOS -->
+    <!-- PART 3 : PHOTOS -->
+    <section id="gallerySection" class="hidden">
+        <h2>📸 Our Little World</h2>
+
+        <div class="gallery">
+
+            <div class="photo">
+                <img src="/images/image2.png">
+                <p class="caption">you’re my heartbeat❤️</p>
+            </div>
+
+            <div class="photo">
+                <img src="/images/image3.png">
+                <p class="caption">Mirror mein hum… aur duniya out of focus 😌✨</p>
+            </div>
+
+            <div class="photo">
+                <img src="/images/image8.png">
+                <p class="caption">He thinks he’s cool… but he melts for me 😏💕</p>
+            </div>
+
+            <div class="photo">
+                <img src="/images/image1.png">
+                <p class="caption">From random selfies… to forever memories 💫❤️</p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- PART 4 : VIDEO + FINAL -->
+    <section id="finalSection" class="hidden">
+        <h2>🎥 Our Journey</h2>
+
+        <div class="story-video">
+
+            <!-- Slides -->
+            <img src="/images/CanteenDays.png" class="story-slide active">
+            <img src="/images/CollegeDays.png" class="story-slide">
+            <img src="/images/Coffe.png" class="story-slide">
+            <img src="/images/Letter.png" class="story-slide">
+            <img src="/images/CollegStair.png" class="story-slide">
+            <img src="/images/WaterTank.png" class="story-slide">
+            <img src="/images/SOda.png" class="story-slide">
+            <img src="/images/nowto.png" class="story-slide">
+
+            <!-- Romantic Text -->
+            <div class="story-text">
+                From  College Canteen ☕<br>
+                To Forever Together ❤️
+            </div>
+
+        </div>
+
+        <button class="glow-btn" onclick="end()">Forever With Honey ❤️</button>
+    </section>
+
+    <script>
+        const heart = document.getElementById("heart");
+        const game = document.getElementById("game");
+        let tries = 0;
+
+        function moveHeart() {
+            heart.style.left = Math.random() * 250 + "px";
+            heart.style.top = Math.random() * 250 + "px";
+        }
+
+        heart.onmouseover = () => {
+            tries++;
+            document.getElementById("triesText").innerText = "Attempts: " + tries;
+            if (tries < 6) moveHeart();
+        };
+
+        heart.onclick = () => {
+            if (tries >= 5) {
+                document.getElementById("gameSection").classList.add("hidden");
+                document.getElementById("heartSection").classList.remove("hidden");
+            }
+        };
+
+        moveHeart();
+
+        let percent = 0;
+        function fillHeart() {
+            if (percent < 100) {
+                percent += 20;
+                document.getElementById("fill").style.width = percent + "%";
+                if (percent === 100) {
+                    document.getElementById("fillText").innerText = "Heart unlocked ❤️";
+                    setTimeout(() => {
+                        document.getElementById("heartSection").classList.add("hidden");
+                        document.getElementById("gallerySection").classList.remove("hidden");
+                        document.getElementById("finalSection").classList.remove("hidden");
+                    }, 1000);
+                }
+            }
+        }
+
+
+                // STORY SLIDES ANIMATION
+        const storySlides = document.querySelectorAll(".story-slide");
+        let storyIndex = 0;
+
+        setInterval(() => {
+            storySlides[storyIndex].classList.remove("active");
+            storyIndex = (storyIndex + 1) % storySlides.length;
+            storySlides[storyIndex].classList.add("active");
+        }, 4000);
+
+             function end() {
+            alert("❤️ Forever starts here ❤️");
+            window.location.href = "/Home/Secret";
+        }
+    </script>
+
+</body>
+</html>
