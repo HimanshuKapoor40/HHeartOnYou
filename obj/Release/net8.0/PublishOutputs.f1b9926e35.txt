@@ -1,0 +1,7 @@
+D:\projects\Personaal\personaal\personaal\bin\Release\net8.0\publish\personaal.exe
+D:\projects\Personaal\personaal\personaal\bin\Release\net8.0\publish\appsettings.Development.json
+D:\projects\Personaal\personaal\personaal\bin\Release\net8.0\publish\appsettings.json
+D:\projects\Personaal\personaal\personaal\bin\Release\net8.0\publish\personaal.dll
+D:\projects\Personaal\personaal\personaal\bin\Release\net8.0\publish\personaal.deps.json
+D:\projects\Personaal\personaal\personaal\bin\Release\net8.0\publish\personaal.runtimeconfig.json
+D:\projects\Personaal\personaal\personaal\bin\Release\net8.0\publish\personaal.pdb
